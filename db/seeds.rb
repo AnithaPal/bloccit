@@ -21,3 +21,6 @@ puts "Seed finished"
 puts "#{Post.count} posts are created"
 puts "#{Comment.count} comments are created"
 
+require 'faker'
+ 
+ 
