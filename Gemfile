@@ -3,6 +3,9 @@ ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+
+# adding pry irb gem
+gem 'pry-rails'
 # Use sqlite3 as the database for Active Record
 group :production do
    gem 'pg'
