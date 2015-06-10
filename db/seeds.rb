@@ -18,7 +18,7 @@ posts = Post.all
 end  
 
 uniq_post = Post.find_or_create_by!(title: "This is my unique title", body: "This is my unique body")
-uniq_comment = Comment.find_or_create_by!(post: uniq_post, body: "This is my unique comment")
+uniq_comment = uniq_post.comments.find_or_create_by!(body: "This is my unique comment")
 
 
 puts "Seed finished"
