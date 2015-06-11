@@ -31,6 +31,5 @@ puts "#{Post.count} posts are created"
 puts "#{Comment.count} comments are created"
 puts "#{Advertisement.count} advertisements are created"
 
-require 'faker'
  
  
