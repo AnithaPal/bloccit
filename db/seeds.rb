@@ -15,11 +15,21 @@ posts = Post.all
     post: posts.sample,
     body: Faker::Lorem.paragraph)
 
-end  
+end 
+
+#create advertisments
+50.times do
+  Advertisement.create!(
+    title: Faker::Lorem.sentence,
+    copy: Faker::Lorem.characters(6),
+    price: Faker::Commerce.price)
+
+end 
 
 puts "Seed finished"
 puts "#{Post.count} posts are created"
 puts "#{Comment.count} comments are created"
+puts "#{Advertisement.count} advertisements are created"
 
 require 'faker'
  
