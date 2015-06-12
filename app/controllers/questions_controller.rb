@@ -34,6 +34,7 @@ class QuestionsController < ApplicationController
       redirect_to @question
     else
       flash[:error] = "There was an error updating the question. Please try again"
+      render :edit
     end    
 
   end  
