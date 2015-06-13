@@ -8,14 +8,14 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @qustion = Question.new
+    @question = Question.new
   end
 
   def create
     @question = Question.new(params.require(:question).permit(:title, :body, :resolved))
     if @question.save
       flash[:notice] = "Question was saved"
-      redirect_ to @question
+      redirect_to @question
     else
       flash[:error] = "There was an error saving the question. Please try again"  
       render :new
@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    if @post.update_attributes(params.require(:question).pemit(:title, :body, :resolved))
+    if @question.update_attributes(params.require(:question).permit(:title, :body, :resolved))
       flash[:notice] = "Question was updated"
       redirect_to @question
     else
