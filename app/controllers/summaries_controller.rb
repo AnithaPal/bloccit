@@ -3,14 +3,14 @@ class SummariesController < ApplicationController
 
   def new
     @topic = Topic.find(params[:topic_id])
-    @post = @topic.post.find(params[:post_id])
+    @post = @topic.posts.find(params[:post_id])
     @summary = Summary.new
     authorize @summary
   end
 
   def create
     @topic = Topic.find(params[:topic_id])
-    @post = @topic.post.find(params[:topic_id])
+    @post = posts.find(params[:topic_id])
     @summary = current_user.summaries.build.require(:summary).permit(:body)
     authorize @summary
     if @summary.save
@@ -25,7 +25,7 @@ class SummariesController < ApplicationController
   def show
     @summary = Summary.find(params[:id])
     @topic = Topic.find(params[:topic_id])
-    @post = @topic.post.find(params[:post_id])  
+    @post = posts.find(params[:post_id])  
   end
 
   
