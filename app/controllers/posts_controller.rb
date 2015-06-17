@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
-  def index
-    @posts = Post.all
-    authorize @posts
-  end 
+
+  # Post Index is removed becasue it is nested iside topic
+  # def index
+  #   @posts = Post.all
+  #   authorize @posts
+  # end 
 
   def show
     @post = Post.find(params[:id])
