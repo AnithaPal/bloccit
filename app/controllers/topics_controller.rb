@@ -10,10 +10,10 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
-    @posts = @topic.posts
-    authorize @topic
-  end
+     @topic = Topic.find(params[:id])
+     @posts = @topic.posts
+     authorize @topic
+   end
 
   def edit
     @topic = Topic.find(params[:id])
@@ -21,7 +21,8 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = current_user.topics.build(params.require(:topic).permit(:title, :description, :public))
+    
+    @topic = Topic.new(params.require(:topic).permit(:name, :description, :public))
     authorize @topic
     if @topic.save
       redirect_to @topic, notice: 'Topic was saved successfully.'

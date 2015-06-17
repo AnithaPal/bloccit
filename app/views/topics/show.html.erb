@@ -1,5 +1,6 @@
-<h1><%=  @topic.name %></h1>
-% if policy(@topic).update? %>
+<h1><%= @topic.name %></h1>
+ 
+ <% if policy(@topic).update? %>
    <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
  <% end %>
  
@@ -22,4 +23,3 @@
      <% end %>
    </div>
  </div>
-
