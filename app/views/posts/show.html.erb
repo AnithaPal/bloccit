@@ -1,5 +1,8 @@
 
 <h1> <%= @post.title %> </h1>
+<% if @summary.present? %>
+   <h4> <%= link_to "Summary", topic_post_summary_path(@topic, @post, @summary) %> </h4>
+<% end %>   
 <div class="row">
   <div class="col-md-8">
     <p><%= @post.body %></p>
