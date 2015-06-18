@@ -10,8 +10,9 @@ class SummariesController < ApplicationController
 
   def create
     @topic = Topic.find(params[:topic_id])
-    @post = posts.find(params[:topic_id])
-    @summary = current_user.summaries.build.require(:summary).permit(:body)
+    @post = @topic.posts.find(params[:post_id])
+    @summary = current_user.summaries.build(params.require(:summary).permit(:body))
+
     authorize @summary
     if @summary.save
       flash[:notice] = "Summary was saved"
