@@ -78,5 +78,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # to configure smtp to heroku server to receive mail after signup
-  config.action_mailer.default_url_options = {host: 'bloccit.herokuapp.com'}
+
+  config.action_mailer.default_url_options = { host: 'bloccit.herokuapp.com' }
 end
