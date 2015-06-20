@@ -39,6 +39,7 @@ class TopicsController < ApplicationController
       redirect_to @topic, notice: 'Topic was updated successfully'
     else 
       flash[:error] = 'Error updating a topic. Try again'
+      render :edit
     end  
   end 
 end
