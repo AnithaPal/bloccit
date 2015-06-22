@@ -34,12 +34,34 @@ gem 'jquery-rails'
 # Adding faker gem to add deve data automatically
 gem 'faker'
 
+# Adding device to authenticate users
+gem 'devise'
+
+# Adding Figaro to handle sensitive data
+gem 'figaro'
+
+# Adding pundit to authorize users
+gem 'pundit'
+
+#To gt mark down text fomat support
+gem 'redcarpet'
+
+#To upload images to ruby application
+gem 'carrierwave'
+#To manipulate images
+gem 'mini_magick'
+
+# To help to store uploaded files in S3
+gem 'fog'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+
 
 
 # Use ActiveModel has_secure_password
