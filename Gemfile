@@ -54,6 +54,10 @@ gem 'mini_magick'
 # To help to store uploaded files in S3
 gem 'fog'
 
+# To organize content and make pages of content
+
+gem 'will_paginate', '~> 3.0.5'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
