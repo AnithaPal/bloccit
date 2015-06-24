@@ -42,4 +42,16 @@ class TopicsController < ApplicationController
       flash[:error] = 'Error updating a topic. Try again'
     end  
   end 
+
+  def destroy
+    @topic = Topic.find(params[:id])
+    authorize @topic
+    if topic.destroy
+      flash[:notice] = "\"#{@topic.name}\"  was deleted successfully"
+      redirect_to @topic
+    else
+      flash[:error]  = "There was an error deleting  the topid"
+      render :show
+    end  
+
 end
