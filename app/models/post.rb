@@ -19,6 +19,6 @@ class Post < ActiveRecord::Base
   end
   
   def points
-    up_votes - down_votes
+    votes.sum(:value)
   end    
 end
