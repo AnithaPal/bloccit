@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+  class PostsController < ApplicationController
 
   # Post Index is removed becasue it is nested inside topic
   # def index
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
   def new
     @topic = Topic.find(params[:topic_id])
-    @post = Post.new
+    @post = Post.new    
     authorize @post
   end
 
