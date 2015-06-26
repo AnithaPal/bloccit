@@ -38,11 +38,9 @@ class Post < ActiveRecord::Base
 
    def save_with_initial_vote
     ActiveRecord::Base.transaction do
-      post = Post.create
-      post.save
-      post.create_vote
-   end  
-  end 
+      self.save
+    end
+  end
 
 
 end
