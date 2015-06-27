@@ -90,5 +90,7 @@ group :development, :test do
 
   #To automate testing our code 
   gem 'rspec-rails', '~> 3.0'
+  #To automate feature testing
+  gem 'capybara'
 end
 
