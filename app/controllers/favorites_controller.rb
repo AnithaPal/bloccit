@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
     @post = Post.find(params[:post_id])
     favorite = current_user.favorites.build(post: @post)
     
-    #authorize favorite
+    authorize favorite
     if favorite.save
       flash[:notice] = "Favorited post"
       redirect_to [@post.topic, @post]
@@ -18,7 +18,7 @@ class FavoritesController < ApplicationController
     @post = Post.find(params[:post_id])
     favorite = current_user.favorites.find(params[:id])
 
-    # authorize favorite
+    authorize favorite
     if favorite.destroy
       flash[:notice] = "Removed favorite."
       redirect_to [@post.topic, @post]
