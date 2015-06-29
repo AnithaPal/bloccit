@@ -2,10 +2,10 @@ require 'rails_helper'
 describe Topic do
    describe "scopes" do
  
-     before do 
+    before do 
       @public_topic = Topic.create # default is public
       @private_topic = Topic.create(public: false)
-      @all_if_user = Topic.all if user.present?
+      # @all_if_user = Topic.all if user.present?
     end
  
      describe "publicly_viewable" do
@@ -16,7 +16,7 @@ describe Topic do
  
      describe "privately_viewable" do
        it "returns a relation of all private topics" do
-         expect(Topic.private).to eq( [@private_topic])
+         expect(Topic.privately_viewable).to eq( [@private_topic])
        end
      end
  
@@ -27,7 +27,7 @@ describe Topic do
        end
  
        it "returns only public topics if user is nil" do
-         expect(Topic.visible_to(nil)).to eq(Topic.public)
+         expect(Topic.visible_to(nil)).to eq(Topic.publicly_viewable)
        end
      end
    end
